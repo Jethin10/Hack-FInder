@@ -1,0 +1,5 @@
+{
+  "name": "HackHunt",
+  "description": "A centralized, automated aggregator web app that pulls hackathons from across the internet into a single, highly-filterable, developer-centric dashboard.",
+  "requestFramePermissions": []
+}

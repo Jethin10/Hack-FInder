@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="HackHunt icon">
+  <rect x="6" y="6" width="116" height="116" rx="28" fill="#101012"/>
+  <circle cx="64" cy="64" r="35" fill="none" stroke="#F4F4F5" stroke-width="8"/>
+  <path d="M64 21v16M64 91v16M21 64h16M91 64h16" stroke="#F4F4F5" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="64" cy="64" r="7" fill="#F4F4F5"/>
+</svg>
