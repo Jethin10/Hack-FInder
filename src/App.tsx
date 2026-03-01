@@ -179,8 +179,20 @@ export default function App() {
     setHiddenIds((previous) => previous.filter((id) => !currentIds.has(id)));
   };
 
+  const isHostedProduction = Boolean(
+    import.meta.env.VITE_API_BASE_URL?.trim(),
+  );
+
   const handleRefresh = async () => {
     if (isRefreshing) {
+      return;
+    }
+
+    if (isHostedProduction) {
+      setRefreshMessage(
+        "Data auto-refreshes every 12 hours via GitHub Actions. Pull down to reload current data.",
+      );
+      setRefreshVersion((previous) => previous + 1);
       return;
     }
 
