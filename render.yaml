@@ -1,0 +1,40 @@
+services:
+  # ── Express API (Node.js Web Service) ──────────────────────────
+  - type: web
+    name: hackhunt-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run start:api
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "8787"
+      - key: HACKHUNT_ALLOWED_ORIGIN
+        value: "*"
+      - key: HACKHUNT_FORCE_SEED
+        value: "false"
+      - key: HACKHUNT_DB_PATH
+        value: "./data/hackhunt.db"
+      - key: HACKHUNT_INGESTED_JSON_PATH
+        value: "./data/ingested_hackathons.json"
+    healthCheckPath: /api/health
+    autoDeploy: true
+
+  # ── React Frontend (Static Site) ───────────────────────────────
+  - type: web
+    name: hackhunt-web
+    runtime: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    autoDeploy: true
