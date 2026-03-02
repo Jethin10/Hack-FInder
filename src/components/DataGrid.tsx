@@ -70,7 +70,7 @@ const FORMAT_STYLES: Record<string, { icon: React.ReactNode; color: string }> = 
 
 const timelineStatusColor = (label: string): string => {
   if (label === "Registration open") {
-    return "text-zinc-900";
+    return "text-amber-600";
   }
   if (label.startsWith("Registration opens in")) {
     return "text-zinc-700";
@@ -237,7 +237,7 @@ const HackathonRow = React.memo(function HackathonRow({
           href={hackathon.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium text-zinc-900 bg-zinc-100 border border-zinc-300 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-colors cursor-pointer"
+          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium text-zinc-900 bg-zinc-100 border border-zinc-300 hover:bg-amber-500 hover:text-zinc-900 hover:border-amber-500 transition-colors cursor-pointer"
         >
           {hackathon.prizes.length > 0 &&
             hackathon.prizes[0] !== "Unspecified" && (
@@ -450,7 +450,7 @@ export default function DataGrid({
                   type="button"
                   onClick={() => onListModeChange("all")}
                   className={`px-2.5 py-1 text-xs rounded-lg transition-colors cursor-pointer ${listMode === "all"
-                    ? "bg-zinc-100 text-zinc-900"
+                    ? "bg-amber-500 text-zinc-900 font-semibold"
                     : "text-zinc-300 hover:text-zinc-100"
                     }`}
                 >
@@ -460,7 +460,7 @@ export default function DataGrid({
                   type="button"
                   onClick={() => onListModeChange("saved")}
                   className={`px-2.5 py-1 text-xs rounded-lg transition-colors cursor-pointer ${listMode === "saved"
-                    ? "bg-zinc-100 text-zinc-900"
+                    ? "bg-amber-500 text-zinc-900 font-semibold"
                     : "text-zinc-300 hover:text-zinc-100"
                     }`}
                 >

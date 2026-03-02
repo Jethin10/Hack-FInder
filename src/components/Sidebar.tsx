@@ -271,7 +271,8 @@ export default function Sidebar({
               <h2 className="text-xl font-semibold text-zinc-50 tracking-tight">
                 HackHunt
               </h2>
-              <p className="text-xs text-zinc-300 mt-1">
+              <div className="h-0.5 w-8 bg-amber-500 rounded-full mt-1" />
+              <p className="text-xs text-zinc-300 mt-1.5">
                 Fresh hackathons with open registration.
               </p>
             </div>
@@ -329,20 +330,18 @@ export default function Sidebar({
                   key={key}
                   type="button"
                   onClick={() => handleFormatChange(key)}
-                  className={`w-full flex items-center justify-between rounded-xl px-3 py-2.5 border transition-colors cursor-pointer ${
-                    active
+                  className={`w-full flex items-center justify-between rounded-xl px-3 py-2.5 border transition-colors cursor-pointer ${active
                       ? "bg-zinc-900 border-zinc-900 text-white"
                       : "bg-white border-zinc-300 text-zinc-700 hover:border-zinc-500 hover:text-zinc-900"
-                  }`}
+                    }`}
                 >
                   <span className="flex items-center gap-2 text-sm font-medium">
                     {icon}
                     {label}
                   </span>
                   <span
-                    className={`w-2 h-2 rounded-full ${
-                      active ? "bg-white" : "bg-zinc-300"
-                    }`}
+                    className={`w-2 h-2 rounded-full ${active ? "bg-white" : "bg-zinc-300"
+                      }`}
                   />
                 </button>
               );
@@ -413,11 +412,10 @@ export default function Sidebar({
                       key={days}
                       type="button"
                       onClick={() => handleStartWithinDaysChip(days)}
-                      className={`${CHIP_CLASS} ${
-                        active
+                      className={`${CHIP_CLASS} ${active
                           ? "bg-zinc-900 text-white border-zinc-900"
                           : "bg-white text-zinc-600 border-zinc-300 hover:border-zinc-500 hover:text-zinc-900"
-                      }`}
+                        }`}
                     >
                       {days}d
                     </button>
@@ -496,11 +494,10 @@ export default function Sidebar({
                     key={theme}
                     type="button"
                     onClick={() => handleThemeToggle(theme)}
-                    className={`${CHIP_CLASS} ${
-                      active
+                    className={`${CHIP_CLASS} ${active
                         ? "bg-zinc-900 text-white border-zinc-900"
                         : "bg-white text-zinc-600 border-zinc-300 hover:border-zinc-500 hover:text-zinc-900"
-                    }`}
+                      }`}
                   >
                     {theme}
                   </button>
@@ -519,11 +516,10 @@ export default function Sidebar({
                   key={prize}
                   type="button"
                   onClick={() => handlePrizeToggle(prize)}
-                  className={`${CHIP_CLASS} ${
-                    active
+                  className={`${CHIP_CLASS} ${active
                       ? "bg-zinc-900 text-white border-zinc-900"
                       : "bg-white text-zinc-600 border-zinc-300 hover:border-zinc-500 hover:text-zinc-900"
-                  }`}
+                    }`}
                 >
                   {prize}
                 </button>
@@ -541,14 +537,12 @@ export default function Sidebar({
             <button
               type="button"
               onClick={() => setTailorToSkills((previous) => !previous)}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer ${
-                tailorToSkills ? "bg-zinc-900" : "bg-zinc-300"
-              }`}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer ${tailorToSkills ? "bg-zinc-900" : "bg-zinc-300"
+                }`}
             >
               <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                  tailorToSkills ? "translate-x-6" : "translate-x-1"
-                }`}
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${tailorToSkills ? "translate-x-6" : "translate-x-1"
+                  }`}
               />
             </button>
           </div>
@@ -562,11 +556,10 @@ export default function Sidebar({
                   onClick={() =>
                     setUserSkills((previous) => toggleSkillTag(previous, skill))
                   }
-                  className={`${CHIP_CLASS} ${
-                    active
+                  className={`${CHIP_CLASS} ${active
                       ? "bg-zinc-900 text-white border-zinc-900"
                       : "bg-white text-zinc-600 border-zinc-300 hover:border-zinc-500 hover:text-zinc-900"
-                  }`}
+                    }`}
                 >
                   {skill}
                 </button>
