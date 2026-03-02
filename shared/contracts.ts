@@ -72,3 +72,55 @@ export interface HackathonListResponse {
   facets: HackathonFacets;
   generatedAt: string;
 }
+
+export type MedoSkillLevel = "beginner" | "intermediate" | "advanced";
+
+export interface MedoCopilotHackathonContext {
+  id: string;
+  title: string;
+  format: HackathonFormat;
+  themes: string[];
+  startDate: string;
+  finalSubmissionDate: string;
+  prizes: PrizeCategory[];
+  locationText: string;
+}
+
+export interface MedoCopilotConstraints {
+  hoursAvailable: number;
+  teamSize: number;
+  skillLevel: MedoSkillLevel;
+}
+
+export interface MedoCopilotRequest {
+  hackathonContext: MedoCopilotHackathonContext;
+  userSkills: string[];
+  goal: string;
+  constraints: MedoCopilotConstraints;
+}
+
+export interface MedoCopilotJudgingAlignment {
+  execution: string;
+  usefulness: string;
+  creativity: string;
+  design: string;
+  complexity: string;
+}
+
+export interface MedoCopilotSubmissionKit {
+  devpostSummary: string;
+  demoScript60s: string;
+  checklist: string[];
+}
+
+export interface MedoCopilotResponse {
+  projectTitle: string;
+  oneLinePitch: string;
+  problemStatement: string;
+  solutionOverview: string;
+  architecture: string[];
+  buildPlan: string[];
+  judgingAlignment: MedoCopilotJudgingAlignment;
+  submissionKit: MedoCopilotSubmissionKit;
+  riskMitigation: string[];
+}

@@ -4,12 +4,19 @@ import DataGrid from "./components/DataGrid";
 import CommandPalette from "./components/CommandPalette";
 import { fetchHackathons, refreshHackathons } from "./lib/api";
 import {
+  readSkillsFromStorage,
   readIdsFromStorage,
   toggleInList,
+  writeSkillsToStorage,
   writeIdsToStorage,
 } from "./lib/userState";
 import { applyCommandQuery } from "./utils/commandParser";
-import { FilterState, HackathonListItem, PrizeCategory } from "./types";
+import {
+  DisplayHackathonListItem,
+  FilterState,
+  PrizeCategory,
+} from "./types";
+import { rankHackathonsBySkillMatch } from "./utils/skillMatcher";
 
 const DEFAULT_PRIZES: PrizeCategory[] = [
   "Cash",
@@ -41,14 +48,19 @@ const INITIAL_FILTERS: FilterState = {
 };
 
 const SAVED_IDS_STORAGE_KEY = "hackhunt.saved.ids";
+const USER_SKILLS_STORAGE_KEY = "hackhunt.user.skills";
 
 export default function App() {
   const [filters, setFilters] = useState<FilterState>(INITIAL_FILTERS);
 
-  const [hackathons, setHackathons] = useState<HackathonListItem[]>([]);
+  const [hackathons, setHackathons] = useState<DisplayHackathonListItem[]>([]);
   const [savedIds, setSavedIds] = useState<string[]>(() =>
     readIdsFromStorage(SAVED_IDS_STORAGE_KEY),
   );
+  const [userSkills, setUserSkills] = useState<string[]>(() =>
+    readSkillsFromStorage(USER_SKILLS_STORAGE_KEY),
+  );
+  const [tailorToSkills, setTailorToSkills] = useState(true);
   const [hiddenIds, setHiddenIds] = useState<string[]>([]);
   const [listMode, setListMode] = useState<"all" | "saved">("all");
   const [totalResults, setTotalResults] = useState(0);
@@ -128,6 +140,10 @@ export default function App() {
   }, [savedIds]);
 
   useEffect(() => {
+    writeSkillsToStorage(USER_SKILLS_STORAGE_KEY, userSkills);
+  }, [userSkills]);
+
+  useEffect(() => {
     if (!isRefreshing || refreshStartedAtMs === null) {
       return;
     }
@@ -150,15 +166,26 @@ export default function App() {
     [hackathons, hiddenIdSet],
   );
 
+  const rankedHackathons = useMemo(() => {
+    if (!tailorToSkills || userSkills.length === 0) {
+      return hackathons.map((hackathon) => ({
+        ...hackathon,
+        matchScore: undefined,
+        matchOverlap: undefined,
+      }));
+    }
+    return rankHackathonsBySkillMatch(hackathons, userSkills);
+  }, [hackathons, tailorToSkills, userSkills]);
+
   const visibleHackathons = useMemo(() => {
-    const notHidden = hackathons.filter(
+    const notHidden = rankedHackathons.filter(
       (hackathon) => !hiddenIdSet.has(hackathon.id),
     );
     if (listMode === "saved") {
       return notHidden.filter((hackathon) => savedIdSet.has(hackathon.id));
     }
     return notHidden;
-  }, [hackathons, hiddenIdSet, listMode, savedIdSet]);
+  }, [rankedHackathons, hiddenIdSet, listMode, savedIdSet]);
 
   const handleToggleSaved = (hackathonId: string) => {
     setSavedIds((previous) => toggleInList(previous, hackathonId));
@@ -227,6 +254,10 @@ export default function App() {
         setFilters={setFilters}
         availableThemes={availableThemes}
         availablePrizes={availablePrizes}
+        userSkills={userSkills}
+        setUserSkills={setUserSkills}
+        tailorToSkills={tailorToSkills}
+        setTailorToSkills={setTailorToSkills}
         onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
       />
       <DataGrid
@@ -249,6 +280,7 @@ export default function App() {
         onHideHackathon={handleHideHackathon}
         hiddenInCurrentResultsCount={hiddenInCurrentResultsCount}
         onRestoreHiddenInCurrentResults={handleRestoreHiddenInCurrentResults}
+        userSkills={userSkills}
       />
       <CommandPalette
         isOpen={isCommandPaletteOpen}

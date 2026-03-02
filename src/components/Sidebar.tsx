@@ -4,6 +4,7 @@ import {
   LOCATION_COORDINATES_BY_LABEL,
   LOCATION_OPTIONS,
 } from "../constants/locations";
+import { toggleSkillTag } from "../lib/userState";
 import {
   ChevronDown,
   Globe,
@@ -19,6 +20,10 @@ interface SidebarProps {
   setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
   availableThemes: string[];
   availablePrizes: FilterState["prizes"];
+  userSkills: string[];
+  setUserSkills: React.Dispatch<React.SetStateAction<string[]>>;
+  tailorToSkills: boolean;
+  setTailorToSkills: React.Dispatch<React.SetStateAction<boolean>>;
   onOpenCommandPalette: () => void;
 }
 
@@ -48,6 +53,18 @@ const TOP_INPUT_CLASS =
 const SELECT_CLASS = `${INPUT_CLASS} cursor-pointer`;
 const CHIP_CLASS =
   "px-2.5 py-1 rounded-full text-xs border transition-colors cursor-pointer";
+const DEFAULT_SKILL_OPTIONS = [
+  "AI/ML",
+  "Productivity",
+  "Frontend",
+  "Backend",
+  "Cloud",
+  "Data",
+  "Design",
+  "Web3",
+  "Mobile",
+  "Education",
+];
 
 function Section({
   title,
@@ -88,9 +105,17 @@ export default function Sidebar({
   setFilters,
   availableThemes,
   availablePrizes,
+  userSkills,
+  setUserSkills,
+  tailorToSkills,
+  setTailorToSkills,
   onOpenCommandPalette,
 }: SidebarProps) {
   const [searchInput, setSearchInput] = useState(filters.searchQuery);
+  const skillOptions = useMemo(
+    () => [...new Set([...DEFAULT_SKILL_OPTIONS, ...availableThemes])].slice(0, 24),
+    [availableThemes],
+  );
 
   const startWithinInputValue = useMemo(
     () =>
@@ -102,6 +127,8 @@ export default function Sidebar({
 
   const resetFilters = () => {
     setSearchInput("");
+    setUserSkills([]);
+    setTailorToSkills(true);
     setFilters({
       format: { online: true, offline: true, hybrid: true },
       location: { baseLocation: "Anywhere", baseCoordinates: undefined, radiusKm: 50 },
@@ -232,6 +259,7 @@ export default function Sidebar({
     filters.themes.length > 0,
     filters.prizes.length > 0,
     filters.searchQuery.length > 0,
+    userSkills.length > 0,
   ].filter(Boolean).length;
 
   return (
@@ -498,6 +526,49 @@ export default function Sidebar({
                   }`}
                 >
                   {prize}
+                </button>
+              );
+            })}
+          </div>
+        </Section>
+
+        <Section
+          title={`My Skills${userSkills.length > 0 ? ` (${userSkills.length})` : ""}`}
+          subtitle="Tailor recommendations to your strengths"
+        >
+          <div className="flex items-center justify-between rounded-2xl border border-zinc-200 bg-zinc-50/55 px-3 py-2.5 mb-3">
+            <span className="text-xs text-zinc-600">Tailor to my skills</span>
+            <button
+              type="button"
+              onClick={() => setTailorToSkills((previous) => !previous)}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer ${
+                tailorToSkills ? "bg-zinc-900" : "bg-zinc-300"
+              }`}
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                  tailorToSkills ? "translate-x-6" : "translate-x-1"
+                }`}
+              />
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {skillOptions.map((skill) => {
+              const active = userSkills.includes(skill);
+              return (
+                <button
+                  key={skill}
+                  type="button"
+                  onClick={() =>
+                    setUserSkills((previous) => toggleSkillTag(previous, skill))
+                  }
+                  className={`${CHIP_CLASS} ${
+                    active
+                      ? "bg-zinc-900 text-white border-zinc-900"
+                      : "bg-white text-zinc-600 border-zinc-300 hover:border-zinc-500 hover:text-zinc-900"
+                  }`}
+                >
+                  {skill}
                 </button>
               );
             })}

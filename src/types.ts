@@ -1,5 +1,6 @@
 import type {
   Coordinates,
+  HackathonListItem,
   OrganizerTrackRecordFilter,
   PrizeCategory,
   SortBy,
@@ -16,6 +17,8 @@ export type {
   HackathonListFilters,
   HackathonListItem,
   HackathonListResponse,
+  MedoCopilotRequest,
+  MedoCopilotResponse,
   OrganizerTrackRecordFilter,
   PrizeCategory,
   SortBy,
@@ -44,4 +47,9 @@ export interface FilterState {
   searchQuery: string;
   sortBy: SortBy;
   sortOrder: SortOrder;
+}
+
+export interface DisplayHackathonListItem extends HackathonListItem {
+  matchScore?: number;
+  matchOverlap?: number;
 }

@@ -16,6 +16,8 @@ This app is now split into:
 - Added API health endpoint: `GET /api/health`
 - Frontend now handles loading/error states and consumes filter facets from API
 - Added command-palette query parsing for practical natural language shortcuts
+- Added skill-tailored ranking with visible match score (`Tailor to my skills`)
+- Added Medo Copilot API integration: `POST /api/medo/copilot` with structured project-plan output
 - Added live multi-source ingestion pipeline (`python scripts/run_ingestion.py`) to fetch open hackathons from Devpost, Devfolio, HackerEarth, Unstop, and MLH and upsert SQLite
 - Added ingestion JSON bootstrap support (`data/ingested_hackathons.json`) loaded by API startup when present
 
@@ -58,6 +60,24 @@ Steps:
 - `HACKHUNT_INGEST_SOURCES` - comma-separated source list (`devpost,devfolio,hackerearth,unstop,mlh`)
 - `HACKHUNT_MLH_SEASON_YEAR` - optional MLH season year override (defaults to current UTC year)
 - `HACKHUNT_DISABLE_GEOCODING` - `true` to skip geocoding external lookups
+- `MEDO_API_URL` - Medo endpoint URL for copilot generation
+- `MEDO_API_KEY` - Medo API bearer token
+- `MEDO_API_TIMEOUT_MS` - request timeout for Medo calls (default `10000`)
+
+## Medo Copilot
+
+The dashboard includes a per-row `Copilot` action that calls the backend endpoint:
+
+- `POST /api/medo/copilot`
+
+Request inputs include hackathon context, user skills, goal, and constraints. The response is a structured execution plan with:
+
+- project pitch and problem framing
+- architecture and build plan
+- judging-criteria alignment
+- submission checklist and demo script
+
+If Medo configuration is missing or the upstream call fails, the API returns a deterministic fallback plan so the UI remains usable during demos.
 
 ## Ingestion Pipeline
 

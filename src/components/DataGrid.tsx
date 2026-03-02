@@ -1,10 +1,15 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { HackathonListItem } from "../types";
+import {
+  DisplayHackathonListItem,
+  MedoCopilotResponse,
+  PrizeCategory,
+} from "../types";
 import {
   AlertTriangle,
   Award,
   Bookmark,
   BookmarkCheck,
+  Bot,
   ChevronDown,
   EyeOff,
   ExternalLink,
@@ -21,9 +26,11 @@ import SkeletonCard from "./SkeletonCard";
 import EmptyState from "./EmptyState";
 import { describeTimeline } from "../../shared/timelinePresentation";
 import { addToLimitedSelection } from "../lib/userState";
+import { generateMedoCopilotPlan } from "../lib/api";
+import MedoCopilotPanel from "./MedoCopilotPanel";
 
 interface DataGridProps {
-  hackathons: HackathonListItem[];
+  hackathons: DisplayHackathonListItem[];
   totalResults: number;
   sourceTotalResults: number;
   isLoading: boolean;
@@ -42,6 +49,7 @@ interface DataGridProps {
   onHideHackathon: (hackathonId: string) => void;
   hiddenInCurrentResultsCount: number;
   onRestoreHiddenInCurrentResults: () => void;
+  userSkills: string[];
 }
 
 const PAGE_SIZE = 40;
@@ -81,14 +89,16 @@ const HackathonRow = React.memo(function HackathonRow({
   onToggleSaved,
   onToggleCompare,
   onHide,
+  onGenerateCopilot,
 }: {
-  hackathon: HackathonListItem;
+  hackathon: DisplayHackathonListItem;
   isSaved: boolean;
   isCompared: boolean;
   listMode: "all" | "saved";
   onToggleSaved: (hackathonId: string) => void;
   onToggleCompare: (hackathonId: string) => void;
   onHide: (hackathonId: string) => void;
+  onGenerateCopilot: (hackathon: DisplayHackathonListItem) => void;
 }) {
   const format =
     FORMAT_STYLES[hackathon.format] ?? { icon: null, color: "text-zinc-500" };
@@ -99,8 +109,8 @@ const HackathonRow = React.memo(function HackathonRow({
   const statusColor = timelineStatusColor(timeline.registrationStatus);
 
   return (
-    <article className="group rounded-2xl bg-white/98 border border-zinc-200 px-4 py-4 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.32)] hover:border-zinc-300 hover:shadow-[0_20px_44px_-32px_rgba(15,23,42,0.38)] transition-all">
-      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(210px,240px)_minmax(300px,340px)] gap-4 items-start lg:items-center">
+    <article className="group rounded-2xl bg-white/98 border border-zinc-200 px-5 py-4 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.32)] hover:border-zinc-300 hover:shadow-[0_20px_44px_-32px_rgba(15,23,42,0.38)] transition-all">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(170px,210px)] gap-x-6 gap-y-3 items-start lg:items-center">
         <div className="min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <h3 className="text-[15px] font-semibold text-zinc-900 truncate">
@@ -132,6 +142,11 @@ const HackathonRow = React.memo(function HackathonRow({
             {typeof hackathon.distanceKm === "number" && (
               <span className="text-zinc-600">{hackathon.distanceKm.toFixed(0)} km</span>
             )}
+            {typeof hackathon.matchScore === "number" && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full border border-zinc-300 bg-zinc-100 text-zinc-700 font-medium">
+                {hackathon.matchScore}% Skill Match
+              </span>
+            )}
           </div>
           {hackathon.themes.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mt-2.5">
@@ -161,71 +176,78 @@ const HackathonRow = React.memo(function HackathonRow({
           <p className="text-zinc-800 font-medium mt-1">{timeline.windowLabel}</p>
         </div>
 
-        <div className="flex justify-end gap-2 flex-wrap lg:flex-nowrap">
-          <button
-            type="button"
-            onClick={() => onToggleSaved(hackathon.id)}
-            className={`inline-flex items-center gap-1 px-2.5 py-2 rounded-xl text-xs border transition-colors cursor-pointer ${
-              isSaved
-                ? "bg-zinc-900 text-white border-zinc-900"
-                : "bg-white text-zinc-700 border-zinc-300 hover:text-zinc-950 hover:border-zinc-500"
-            }`}
-            title={
-              isSaved
-                ? listMode === "saved"
-                  ? "Remove from watchlist"
-                  : "Remove from watch later"
-                : "Save for watch later"
-            }
-          >
-            {isSaved ? (
-              <BookmarkCheck className="w-3.5 h-3.5" />
-            ) : (
-              <Bookmark className="w-3.5 h-3.5" />
-            )}
-            {isSaved ? (listMode === "saved" ? "Remove" : "Saved") : "Save"}
-          </button>
-          <button
-            type="button"
-            onClick={() => onToggleCompare(hackathon.id)}
-            className={`inline-flex items-center gap-1 px-2.5 py-2 rounded-xl text-xs border transition-colors cursor-pointer ${
-              isCompared
-                ? "bg-zinc-900 text-white border-zinc-900"
-                : "bg-white text-zinc-700 border-zinc-300 hover:text-zinc-950 hover:border-zinc-500"
-            }`}
-            title={
-              isCompared
-                ? "Remove from compare selection"
-                : "Add to compare selection"
-            }
-          >
-            <Scale className="w-3.5 h-3.5" />
-            {isCompared ? "Added" : "Compare"}
-          </button>
-          <button
-            type="button"
-            onClick={() => onHide(hackathon.id)}
-            className="inline-flex items-center justify-center px-2.5 py-2 rounded-xl text-zinc-500 border border-zinc-300 bg-white hover:text-zinc-900 hover:border-zinc-500 transition-colors cursor-pointer"
-            title="Hide from current instance"
-          >
-            <EyeOff className="w-3.5 h-3.5" />
-          </button>
-          <a
-            href={hackathon.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium text-zinc-900 bg-zinc-100 border border-zinc-300 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-colors cursor-pointer"
-          >
-            {hackathon.prizes.length > 0 &&
-              hackathon.prizes[0] !== "Unspecified" && (
-                <Award className="w-3.5 h-3.5 text-zinc-700 group-hover:text-zinc-200" />
-              )}
-            Apply
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-        </div>
       </div>
-    </article>
+      <div className="flex items-center gap-2 flex-wrap mt-3 pt-3 border-t border-zinc-100">
+        <button
+          type="button"
+          onClick={() => onToggleSaved(hackathon.id)}
+          className={`inline-flex items-center gap-1 px-2.5 py-2 rounded-xl text-xs border transition-colors cursor-pointer ${isSaved
+            ? "bg-zinc-900 text-white border-zinc-900"
+            : "bg-white text-zinc-700 border-zinc-300 hover:text-zinc-950 hover:border-zinc-500"
+            }`}
+          title={
+            isSaved
+              ? listMode === "saved"
+                ? "Remove from watchlist"
+                : "Remove from watch later"
+              : "Save for watch later"
+          }
+        >
+          {isSaved ? (
+            <BookmarkCheck className="w-3.5 h-3.5" />
+          ) : (
+            <Bookmark className="w-3.5 h-3.5" />
+          )}
+          {isSaved ? (listMode === "saved" ? "Remove" : "Saved") : "Save"}
+        </button>
+        <button
+          type="button"
+          onClick={() => onToggleCompare(hackathon.id)}
+          className={`inline-flex items-center gap-1 px-2.5 py-2 rounded-xl text-xs border transition-colors cursor-pointer ${isCompared
+            ? "bg-zinc-900 text-white border-zinc-900"
+            : "bg-white text-zinc-700 border-zinc-300 hover:text-zinc-950 hover:border-zinc-500"
+            }`}
+          title={
+            isCompared
+              ? "Remove from compare selection"
+              : "Add to compare selection"
+          }
+        >
+          <Scale className="w-3.5 h-3.5" />
+          {isCompared ? "Added" : "Compare"}
+        </button>
+        <button
+          type="button"
+          onClick={() => onGenerateCopilot(hackathon)}
+          className="inline-flex items-center gap-1 px-2.5 py-2 rounded-xl text-xs border transition-colors cursor-pointer bg-white text-zinc-700 border-zinc-300 hover:text-zinc-950 hover:border-zinc-500"
+          title="Generate Medo copilot plan"
+        >
+          <Bot className="w-3.5 h-3.5" />
+          Copilot
+        </button>
+        <button
+          type="button"
+          onClick={() => onHide(hackathon.id)}
+          className="inline-flex items-center justify-center px-2.5 py-2 rounded-xl text-zinc-500 border border-zinc-300 bg-white hover:text-zinc-900 hover:border-zinc-500 transition-colors cursor-pointer"
+          title="Hide from current instance"
+        >
+          <EyeOff className="w-3.5 h-3.5" />
+        </button>
+        <a
+          href={hackathon.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium text-zinc-900 bg-zinc-100 border border-zinc-300 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-colors cursor-pointer"
+        >
+          {hackathon.prizes.length > 0 &&
+            hackathon.prizes[0] !== "Unspecified" && (
+              <Award className="w-3.5 h-3.5 text-zinc-700 group-hover:text-zinc-200" />
+            )}
+          Apply
+          <ExternalLink className="w-3.5 h-3.5" />
+        </a>
+      </div>
+    </article >
   );
 });
 
@@ -249,6 +271,7 @@ export default function DataGrid({
   onHideHackathon,
   hiddenInCurrentResultsCount,
   onRestoreHiddenInCurrentResults,
+  userSkills,
 }: DataGridProps) {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [compareIds, setCompareIds] = useState<string[]>([]);
@@ -256,6 +279,14 @@ export default function DataGrid({
   const [isClearWatchlistConfirmOpen, setIsClearWatchlistConfirmOpen] =
     useState(false);
   const [compareWarning, setCompareWarning] = useState<string | null>(null);
+  const [isCopilotOpen, setIsCopilotOpen] = useState(false);
+  const [copilotLoading, setCopilotLoading] = useState(false);
+  const [copilotError, setCopilotError] = useState<string | null>(null);
+  const [copilotResult, setCopilotResult] = useState<MedoCopilotResponse | null>(
+    null,
+  );
+  const [selectedHackathon, setSelectedHackathon] =
+    useState<DisplayHackathonListItem | null>(null);
   const dataKey = hackathons.length;
   const [prevDataKey, setPrevDataKey] = useState(dataKey);
   if (dataKey !== prevDataKey) {
@@ -301,6 +332,45 @@ export default function DataGrid({
     setIsClearWatchlistConfirmOpen(false);
     if (listMode === "saved") {
       onListModeChange("all");
+    }
+  };
+
+  const handleGenerateCopilot = async (hackathon: DisplayHackathonListItem) => {
+    setSelectedHackathon(hackathon);
+    setIsCopilotOpen(true);
+    setCopilotError(null);
+    setCopilotResult(null);
+    setCopilotLoading(true);
+
+    try {
+      const result = await generateMedoCopilotPlan({
+        hackathonContext: {
+          id: hackathon.id,
+          title: hackathon.title,
+          format: hackathon.format,
+          themes: hackathon.themes,
+          startDate: hackathon.startDate,
+          finalSubmissionDate: hackathon.finalSubmissionDate,
+          prizes: hackathon.prizes as PrizeCategory[],
+          locationText: hackathon.locationText,
+        },
+        userSkills,
+        goal: `Build a practical project for ${hackathon.title}`,
+        constraints: {
+          hoursAvailable: 8,
+          teamSize: 1,
+          skillLevel: "beginner",
+        },
+      });
+      setCopilotResult(result);
+    } catch (copilotFetchError) {
+      setCopilotError(
+        copilotFetchError instanceof Error
+          ? copilotFetchError.message
+          : "Copilot request failed",
+      );
+    } finally {
+      setCopilotLoading(false);
     }
   };
 
@@ -379,22 +449,20 @@ export default function DataGrid({
                 <button
                   type="button"
                   onClick={() => onListModeChange("all")}
-                  className={`px-2.5 py-1 text-xs rounded-lg transition-colors cursor-pointer ${
-                    listMode === "all"
-                      ? "bg-zinc-100 text-zinc-900"
-                      : "text-zinc-300 hover:text-zinc-100"
-                  }`}
+                  className={`px-2.5 py-1 text-xs rounded-lg transition-colors cursor-pointer ${listMode === "all"
+                    ? "bg-zinc-100 text-zinc-900"
+                    : "text-zinc-300 hover:text-zinc-100"
+                    }`}
                 >
                   All
                 </button>
                 <button
                   type="button"
                   onClick={() => onListModeChange("saved")}
-                  className={`px-2.5 py-1 text-xs rounded-lg transition-colors cursor-pointer ${
-                    listMode === "saved"
-                      ? "bg-zinc-100 text-zinc-900"
-                      : "text-zinc-300 hover:text-zinc-100"
-                  }`}
+                  className={`px-2.5 py-1 text-xs rounded-lg transition-colors cursor-pointer ${listMode === "saved"
+                    ? "bg-zinc-100 text-zinc-900"
+                    : "text-zinc-300 hover:text-zinc-100"
+                    }`}
                 >
                   Watchlist ({savedIds.length})
                 </button>
@@ -413,11 +481,10 @@ export default function DataGrid({
                 type="button"
                 onClick={onRefresh}
                 disabled={isRefreshing}
-                className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium border transition-colors ${
-                  isRefreshing
-                    ? "bg-zinc-800 border-zinc-700 text-zinc-500 cursor-not-allowed"
-                    : "bg-zinc-100 border-zinc-100 text-zinc-900 hover:bg-zinc-300 hover:border-zinc-300 cursor-pointer"
-                }`}
+                className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium border transition-colors ${isRefreshing
+                  ? "bg-zinc-800 border-zinc-700 text-zinc-500 cursor-not-allowed"
+                  : "bg-zinc-100 border-zinc-100 text-zinc-900 hover:bg-zinc-300 hover:border-zinc-300 cursor-pointer"
+                  }`}
               >
                 <RefreshCw className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`} />
                 {isRefreshing ? `Refreshing ${refreshElapsedSeconds}s` : "Refresh"}
@@ -469,6 +536,7 @@ export default function DataGrid({
               onToggleSaved={onToggleSaved}
               onToggleCompare={handleToggleCompare}
               onHide={onHideHackathon}
+              onGenerateCopilot={handleGenerateCopilot}
             />
           ))}
         </div>
@@ -510,11 +578,10 @@ export default function DataGrid({
                 type="button"
                 disabled={compareHackathons.length < 2}
                 onClick={() => setIsCompareOpen(true)}
-                className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs border transition-colors ${
-                  compareHackathons.length < 2
-                    ? "bg-zinc-800 border-zinc-700 text-zinc-500 cursor-not-allowed"
-                    : "bg-zinc-100 border-zinc-100 text-zinc-900 hover:bg-zinc-300 hover:border-zinc-300 cursor-pointer"
-                }`}
+                className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs border transition-colors ${compareHackathons.length < 2
+                  ? "bg-zinc-800 border-zinc-700 text-zinc-500 cursor-not-allowed"
+                  : "bg-zinc-100 border-zinc-100 text-zinc-900 hover:bg-zinc-300 hover:border-zinc-300 cursor-pointer"
+                  }`}
               >
                 <Scale className="w-3.5 h-3.5" />
                 Open Compare
@@ -691,6 +758,14 @@ export default function DataGrid({
           </div>
         </div>
       )}
+      <MedoCopilotPanel
+        isOpen={isCopilotOpen}
+        onClose={() => setIsCopilotOpen(false)}
+        isLoading={copilotLoading}
+        error={copilotError}
+        result={copilotResult}
+        hackathonTitle={selectedHackathon?.title ?? null}
+      />
       {isClearWatchlistConfirmOpen && (
         <div className="fixed inset-0 z-[60] bg-zinc-900/40 backdrop-blur-sm flex items-center justify-center px-4">
           <div className="w-full max-w-md rounded-2xl border border-zinc-300 bg-white shadow-[0_36px_90px_-48px_rgba(15,23,42,0.52)] p-5">

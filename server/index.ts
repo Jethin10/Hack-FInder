@@ -2,6 +2,10 @@ import dotenv from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
 import { initializeDatabase } from "./db";
 import { listHackathons } from "./hackathonService";
+import {
+  generateMedoCopilotPlan,
+  validateMedoCopilotRequest,
+} from "./medoCopilotService";
 import { parseHackathonFilters } from "./query";
 import { runHackathonRefresh } from "./refreshService";
 
@@ -57,6 +61,27 @@ app.post("/api/hackathons/refresh", async (_request, response, next) => {
       status: "ok",
       ...refreshResult,
     });
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.post("/api/medo/copilot", async (request, response, next) => {
+  let payload;
+  try {
+    payload = validateMedoCopilotRequest(request.body);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Invalid request payload";
+    response.status(400).json({
+      error: "bad_request",
+      message,
+    });
+    return;
+  }
+
+  try {
+    const copilot = await generateMedoCopilotPlan(payload);
+    response.json(copilot);
   } catch (error) {
     next(error);
   }

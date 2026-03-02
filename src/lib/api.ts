@@ -1,4 +1,9 @@
-import { FilterState, HackathonListResponse } from "../types";
+import {
+  FilterState,
+  HackathonListResponse,
+  MedoCopilotRequest,
+  MedoCopilotResponse,
+} from "../types";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL?.trim() ?? "";
 
@@ -78,4 +83,29 @@ export const refreshHackathons = async (): Promise<RefreshHackathonsResponse> =>
   }
 
   return (await response.json()) as RefreshHackathonsResponse;
+};
+
+export const generateMedoCopilotPlan = async (
+  request: MedoCopilotRequest,
+): Promise<MedoCopilotResponse> => {
+  const response = await fetch(buildApiUrl("/api/medo/copilot"), {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(request),
+  });
+
+  if (!response.ok) {
+    let message = `Copilot failed with ${response.status}`;
+    try {
+      const errorPayload = (await response.json()) as { message?: string };
+      if (typeof errorPayload.message === "string" && errorPayload.message.trim()) {
+        message = errorPayload.message;
+      }
+    } catch {
+      // No-op: use generic error message.
+    }
+    throw new Error(message);
+  }
+
+  return (await response.json()) as MedoCopilotResponse;
 };
