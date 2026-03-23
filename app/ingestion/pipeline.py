@@ -359,8 +359,22 @@ def ingest_all_sources(
             print(f"[WARNING] MLH source failed, skipping: {exc}")
 
     deduped = _dedupe_by_id(records)
-    _apply_geocoding(deduped, enabled=geocode)
-    return deduped
+
+    # Drop events whose submission deadline has already passed
+    active = []
+    for record in deduped:
+        try:
+            fsd = datetime.fromisoformat(str(record.get("final_submission_date", "")))
+            if fsd.tzinfo is None:
+                fsd = fsd.replace(tzinfo=timezone.utc)
+            if fsd < current_time:
+                continue
+        except (ValueError, TypeError):
+            pass  # keep records with unparseable dates (let downstream decide)
+        active.append(record)
+
+    _apply_geocoding(active, enabled=geocode)
+    return active
 
 
 def run_pipeline(

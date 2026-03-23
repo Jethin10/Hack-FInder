@@ -189,6 +189,10 @@ def normalize_devpost_hackathons(
         if timeline is None:
             continue
 
+        # Skip events where submissions have closed
+        if timeline.final_submission_date < current_time:
+            continue
+
         location = record.get("displayed_location") or {}
         format_value = _derive_devpost_format(location)
         location_text = _derive_devpost_location_text(format_value, location)
@@ -469,6 +473,10 @@ def normalize_mlh_hackathons(
         if start_date is None or final_date is None:
             continue
 
+        # Skip events that have already ended
+        if final_date < current_time:
+            continue
+
         identifier = str(record.get("id") or "").strip()
         if not identifier:
             continue
@@ -526,6 +534,10 @@ def normalize_hackerearth_hackathons(
         start_date = datetime.fromtimestamp(start_unix, tz=timezone.utc)
         final_date = datetime.fromtimestamp(final_unix, tz=timezone.utc)
         if final_date < start_date:
+            continue
+
+        # Skip events where the submission deadline has passed
+        if final_date < current_time:
             continue
 
         organizer_name = str(record.get("organizer") or "").strip().lower()
