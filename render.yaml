@@ -4,7 +4,6 @@ services:
     name: hackhunt-api
     runtime: node
     plan: free
-    rootDir: app
     buildCommand: npm install
     startCommand: npm run start:api
     envVars:
@@ -17,9 +16,9 @@ services:
       - key: HACKHUNT_FORCE_SEED
         value: "false"
       - key: HACKHUNT_DB_PATH
-        value: "./data/hackhunt.db"
+        value: "./app/data/hackhunt.db"
       - key: HACKHUNT_INGESTED_JSON_PATH
-        value: "./data/ingested_hackathons.json"
+        value: "./app/data/ingested_hackathons.json"
     healthCheckPath: /api/health
     autoDeploy: true
 
@@ -28,9 +27,8 @@ services:
     name: hackhunt-web
     runtime: static
     plan: free
-    rootDir: app
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    staticPublishPath: app/dist
     headers:
       - path: /*
         name: X-Content-Type-Options
