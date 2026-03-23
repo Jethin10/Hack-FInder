@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "mlh-019c1ed9-9417-f3b9-dd00-ac439dd48df9",
+    "title": "Hack Canada",
+    "url": "https://www.hackcanada.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Waterloo, Ontario",
+    "coordinates": null,
+    "startDate": "2026-03-06T01:11:11+00:00",
+    "finalSubmissionDate": "2026-03-08T21:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c0f46-638e-a193-b83b-79a3064824e9",
+    "title": "The Midwest Blockathon",
+    "url": "https://hack.kublockchain.com",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Lawrence , Kansas",
+    "coordinates": null,
+    "startDate": "2026-03-06T20:00:00+00:00",
+    "finalSubmissionDate": "2026-03-08T17:45:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1e83-e9c0-7144-bfe4-f5339b47d63a",
+    "title": "HackMerced XI",
+    "url": "https://www.hackmerced.com",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Merced, CA",
+    "coordinates": null,
+    "startDate": "2026-03-06T21:00:00+00:00",
+    "finalSubmissionDate": "2026-03-08T16:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1e87-3063-6a25-796e-37c612356965",
+    "title": "HackAI",
+    "url": "http://hackai.org",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Richardson, Texas",
+    "coordinates": null,
+    "startDate": "2026-03-07T12:00:00+00:00",
+    "finalSubmissionDate": "2026-03-08T20:30:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ecc-de2c-27c8-8e72-805747580fbd",
+    "title": "HackCU12",
+    "url": "https://www.hackcu.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Boulder, Colorado",
+    "coordinates": null,
+    "startDate": "2026-03-07T14:00:00+00:00",
+    "finalSubmissionDate": "2026-03-08T21:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ee9-f64e-1ef5-44de-a5c94d71211d",
+    "title": "AceHack 5.0",
+    "url": "https://acehack.uem.edu.in/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Jaipur , Rajasthan",
+    "coordinates": null,
+    "startDate": "2026-03-07T14:00:00+00:00",
+    "finalSubmissionDate": "2026-03-08T23:30:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ece-c657-0429-ff67-2b2d6ded04a3",
+    "title": "SASEHacks",
+    "url": "https://www.sasehacks.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Gainesville, Florida",
+    "coordinates": null,
+    "startDate": "2026-03-07T14:00:00+00:00",
+    "finalSubmissionDate": "2026-03-08T07:30:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-0197eb7e-538b-288f-0995-b9d02efc9ad7",
+    "title": "cmd-f 2026",
+    "url": "https://cmd-f.nwplus.io/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Vancouver, British Columbia",
+    "coordinates": null,
+    "startDate": "2026-03-07T14:00:00+00:00",
+    "finalSubmissionDate": "2026-03-08T20:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1eeb-8f83-302f-7a53-238efb2d6eb0",
+    "title": "DUWiT Hacks",
+    "url": "https://duwithacks.com",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Durham, County Durham",
+    "coordinates": null,
+    "startDate": "2026-03-07T14:30:00+00:00",
+    "finalSubmissionDate": "2026-03-08T20:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1f02-7741-2633-158d-3bc1ecc9e274",
+    "title": "Electrothon : Labyrinth of Eternum",
+    "url": "https://electrothon.nith.ac.in",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Hamirpur, Himachal Pradesh",
+    "coordinates": null,
+    "startDate": "2026-03-13T15:00:00+00:00",
+    "finalSubmissionDate": "2026-03-15T22:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019b30c0-d9d4-f858-2669-82c620d97600",
+    "title": "Global Hack Week: Cloud",
+    "url": "https://events.mlh.io/events/13471-global-hack-week-cloud",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Everywhere, Worldwide",
+    "coordinates": null,
+    "startDate": "2026-03-13T16:00:00+00:00",
+    "finalSubmissionDate": "2026-03-19T17:00:00+00:00",
+    "daysToFinal": 6,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ecc-7174-a35c-7bc7-d3cfc2242f20",
+    "title": "McGill AeroHacks",
+    "url": "https://mcgillaerohacks.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Montreal, Quebec",
+    "coordinates": null,
+    "startDate": "2026-03-13T22:00:00+00:00",
+    "finalSubmissionDate": "2026-03-15T20:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1f07-95c4-335d-ccb2-2f4c2eb9548d",
+    "title": "SotonHack",
+    "url": "https://sotonhack.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Southampton, Hampshire",
+    "coordinates": null,
+    "startDate": "2026-03-14T01:11:11+00:00",
+    "finalSubmissionDate": "2026-03-15T22:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019b98da-c776-fed6-8d50-bb6878e0cffd",
+    "title": "Rockethacks",
+    "url": "https://www.rockethacks.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Toledo, Ohio",
+    "coordinates": null,
+    "startDate": "2026-03-14T13:00:00+00:00",
+    "finalSubmissionDate": "2026-03-15T23:59:59+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1f07-140b-ce54-1f40-5ca18ecfebe3",
+    "title": "Hack Esbjerg",
+    "url": "https://hackesbjerg.dk/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Esbjerg, Region of Southern Denmark",
+    "coordinates": null,
+    "startDate": "2026-03-19T13:00:00+00:00",
+    "finalSubmissionDate": "2026-03-20T17:30:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ead-a2cc-e719-edf0-86775cf9ab69",
+    "title": "VandyHacks XII",
+    "url": "https://vandyhacks.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Nashville, TN",
+    "coordinates": null,
+    "startDate": "2026-03-21T12:00:00+00:00",
+    "finalSubmissionDate": "2026-03-22T21:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019b330a-60ce-521d-8be1-2678b318b08d",
+    "title": "HackDuke Code For Good",
+    "url": "https://2026.hackduke.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Durham, North Carolina",
+    "coordinates": null,
+    "startDate": "2026-03-21T13:00:00+00:00",
+    "finalSubmissionDate": "2026-03-22T20:30:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1eaa-b614-5ce3-2fb3-0d203818b25c",
+    "title": "HooHacks",
+    "url": "https://hoohacks.io/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Charlottesville, Virginia",
+    "coordinates": null,
+    "startDate": "2026-03-21T13:00:00+00:00",
+    "finalSubmissionDate": "2026-03-22T22:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1f0a-cb56-3e66-0e40-a402f7393e3c",
+    "title": "KentHackIt",
+    "url": "https://www.kenthackit.co.uk/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Canterbury, Kent",
+    "coordinates": null,
+    "startDate": "2026-03-21T14:00:00+00:00",
+    "finalSubmissionDate": "2026-03-22T20:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ef3-c965-b615-c31c-ba609f11392b",
+    "title": "BeachHacks",
+    "url": "https://beachhacks.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Long Beach, California",
+    "coordinates": null,
+    "startDate": "2026-03-21T14:30:00+00:00",
+    "finalSubmissionDate": "2026-03-22T19:15:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ec8-d7e5-5317-4262-6e6163aa598a",
+    "title": "HackUSF",
+    "url": "https://hackusf.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Tampa, Florida",
+    "coordinates": null,
+    "startDate": "2026-03-28T12:00:00+00:00",
+    "finalSubmissionDate": "2026-03-29T21:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ee0-9f66-6bcd-f39e-d7807ff28890",
+    "title": "HackNewHaven 2026",
+    "url": "https://hackunewhaven.github.io/HNH.github.io/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "West Haven, Connecticut",
+    "coordinates": null,
+    "startDate": "2026-03-28T12:30:00+00:00",
+    "finalSubmissionDate": "2026-03-29T20:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ed5-2824-a65f-40a6-3501c572e30a",
+    "title": "SolHacks",
+    "url": "https://www.solhacks.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Chapel Hill, North Carolina",
+    "coordinates": null,
+    "startDate": "2026-03-28T13:00:00+00:00",
+    "finalSubmissionDate": "2026-03-29T18:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1081-17bc-aaa1-6d40-c6105ce048be",
+    "title": "YHack",
+    "url": "https://www.yhack.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "New Haven, Connecticut",
+    "coordinates": null,
+    "startDate": "2026-03-28T13:00:00+00:00",
+    "finalSubmissionDate": "2026-03-29T20:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019b4760-a658-445c-b1b3-90a2e237ad58",
+    "title": "RevolutionUC",
+    "url": "https://revolutionuc.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Cincinnati, Ohio",
+    "coordinates": null,
+    "startDate": "2026-03-28T14:00:00+00:00",
+    "finalSubmissionDate": "2026-03-29T21:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ee2-afa3-0f9b-28d4-1818ab491431",
+    "title": "Grizzhacks 8",
+    "url": "https://www.grizzhacks.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Rochester, Michigan",
+    "coordinates": null,
+    "startDate": "2026-03-28T14:00:00+00:00",
+    "finalSubmissionDate": "2026-03-29T20:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019be372-2db1-5674-1977-aff390768cc3",
+    "title": "Kent Hack Enough",
+    "url": "https://khe.io/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Kent, Ohio",
+    "coordinates": null,
+    "startDate": "2026-03-28T14:00:00+00:00",
+    "finalSubmissionDate": "2026-03-29T19:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1ec4-c41c-e87a-4684-60988f6da3a8",
+    "title": "Hack @ Penn State",
+    "url": "https://hackpsu.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "University Park, State College, PA",
+    "coordinates": null,
+    "startDate": "2026-03-28T15:00:00+00:00",
+    "finalSubmissionDate": "2026-03-29T20:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-0197eb33-edcd-10ac-e629-5a4d53251404",
+    "title": "HackByte 4.0",
+    "url": "https://www.hackbyte.in/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Jabalpur, Madhya Pradesh",
+    "coordinates": null,
+    "startDate": "2026-04-03T18:30:00+00:00",
+    "finalSubmissionDate": "2026-04-05T20:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c1e8b-a499-a1e4-be75-214f0b85d4d4",
+    "title": "Spring Hacks aka Hack Hack Goose",
+    "url": "https://hackhackgoose.freetailhackers.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Austin, TX",
+    "coordinates": null,
+    "startDate": "2026-04-03T22:00:00+00:00",
+    "finalSubmissionDate": "2026-04-04T23:59:59+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c0339-2d36-7bcd-1cdc-692f49ada194",
+    "title": "Production Engineering Hackathon",
+    "url": "https://events.mlh.io/events/13606",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Everywhere, Worldwide",
+    "coordinates": null,
+    "startDate": "2026-04-04T01:11:11+00:00",
+    "finalSubmissionDate": "2026-04-05T23:59:59+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c5994-371c-0f10-4ded-1341e08ace5c",
+    "title": "DiamondHacks 2026",
+    "url": "https://diamondhacks.acmucsd.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "La Jolla, California",
+    "coordinates": null,
+    "startDate": "2026-04-04T13:00:00+00:00",
+    "finalSubmissionDate": "2026-04-05T20:30:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-0198cd08-b40f-7a2a-e3f9-80cce28a4bb5",
+    "title": "HackTropica 2k26",
+    "url": "https://www.hacktropica.xyz/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Asansol, West Bengal",
+    "coordinates": null,
+    "startDate": "2026-04-04T15:00:00+00:00",
+    "finalSubmissionDate": "2026-04-05T21:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c9b74-95fb-7941-5c73-bd7825dfa445",
+    "title": "ImmerseGT",
+    "url": "https://www.immersegt.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Atlanta, Georgia",
+    "coordinates": null,
+    "startDate": "2026-04-10T16:00:00+00:00",
+    "finalSubmissionDate": "2026-04-12T19:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019bb2af-79c9-ed8a-8294-1a9a7a96ed16",
+    "title": "Global Hack Week: API",
+    "url": "https://events.mlh.io/events/13558-global-hack-week-api",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Everywhere, Worldwide",
+    "coordinates": null,
+    "startDate": "2026-04-10T16:00:00+00:00",
+    "finalSubmissionDate": "2026-04-16T17:00:00+00:00",
+    "daysToFinal": 6,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019b4c48-a772-e665-d2dd-d68cd58971ca",
+    "title": "Bitcamp",
+    "url": "https://bit.camp/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "College Park, Maryland",
+    "coordinates": null,
+    "startDate": "2026-04-10T22:00:00+00:00",
+    "finalSubmissionDate": "2026-04-12T20:30:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-0197eb35-abed-c3b6-b3e5-ef0ae1791bbe",
+    "title": "WEHack",
+    "url": "https://www.wehackutd.com",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Richardson, Texas",
+    "coordinates": null,
+    "startDate": "2026-04-11T01:11:11+00:00",
+    "finalSubmissionDate": "2026-04-12T23:59:59+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c778d-5b72-9a10-3f39-7ff2754a2aae",
+    "title": "MorganHacks",
+    "url": "https://morganhacks.com",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Baltimore, Maryland",
+    "coordinates": null,
+    "startDate": "2026-04-11T12:00:00+00:00",
+    "finalSubmissionDate": "2026-04-12T23:59:59+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c7cb6-15da-51a0-74fd-43673ab39cd0",
+    "title": "WildHacks",
+    "url": "https://www.wildhacks.net/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Evanston, Illinois",
+    "coordinates": null,
+    "startDate": "2026-04-11T14:00:00+00:00",
+    "finalSubmissionDate": "2026-04-12T21:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c90d6-a021-2489-439b-9c6b0e8095d5",
+    "title": "HackDartmouth XI",
+    "url": "https://hack-dartmouth.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Hanover, New Hampshire",
+    "coordinates": null,
+    "startDate": "2026-04-11T14:30:00+00:00",
+    "finalSubmissionDate": "2026-04-12T18:30:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019b955e-fc3f-07c5-a03f-b69ada273832",
+    "title": "AI Hackfest",
+    "url": "https://events.mlh.io/events/13503-ai-hackfest",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Everywhere, Worldwide",
+    "coordinates": null,
+    "startDate": "2026-04-17T15:00:00+00:00",
+    "finalSubmissionDate": "2026-04-19T18:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c9b8c-e7d0-e4c9-181b-b21b6bda0786",
+    "title": "MariHacks",
+    "url": "https://www.marihacks.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Westmount, Quebec",
+    "coordinates": null,
+    "startDate": "2026-04-17T20:15:00+00:00",
+    "finalSubmissionDate": "2026-04-18T22:30:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c4cfa-fd55-b6c9-a537-0365b7a973e1",
+    "title": "StarkHacks",
+    "url": "https://www.starkhacks.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "West Lafayette, Indiana",
+    "coordinates": null,
+    "startDate": "2026-04-17T20:30:00+00:00",
+    "finalSubmissionDate": "2026-04-19T20:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c9b86-fab6-3e64-3ae8-3f9036c918c5",
+    "title": "HackPrinceton Spring 2026",
+    "url": "https://www.hackprinceton.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Princeton, New Jersey",
+    "coordinates": null,
+    "startDate": "2026-04-17T21:00:00+00:00",
+    "finalSubmissionDate": "2026-04-19T19:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c9beb-97dd-b30b-904c-510a8d381eb5",
+    "title": "HackKU",
+    "url": "https://the-hackku.github.io/hackku26_website/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Lawrence, KS",
+    "coordinates": null,
+    "startDate": "2026-04-17T21:00:00+00:00",
+    "finalSubmissionDate": "2026-04-19T17:30:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c96ee-4436-a0b6-ce33-d4b71d3d5021",
+    "title": "Citrus Hack",
+    "url": "https://www.citrushack.com",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Riverside, California",
+    "coordinates": null,
+    "startDate": "2026-04-18T01:11:11+00:00",
+    "finalSubmissionDate": "2026-04-19T23:59:59+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c77ef-6f24-d299-d36c-dae6d0ab7c91",
+    "title": "DataHacks",
+    "url": "https://datahacks.ds3ucsd.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "La Jolla, CA",
+    "coordinates": null,
+    "startDate": "2026-04-18T12:00:00+00:00",
+    "finalSubmissionDate": "2026-04-19T21:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c4963-a43f-53e5-7823-0ef36c6e6b78",
+    "title": "Hack Kosice",
+    "url": "https://hackkosice.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Ko\u0161ice, Ko\u0161ice Region",
+    "coordinates": null,
+    "startDate": "2026-04-18T12:30:00+00:00",
+    "finalSubmissionDate": "2026-04-19T20:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019ab732-c299-f099-0da7-c6a2c7ca2979",
+    "title": "LA Hacks",
+    "url": "https://lahacks.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Los Angeles, California",
+    "coordinates": null,
+    "startDate": "2026-04-24T19:30:00+00:00",
+    "finalSubmissionDate": "2026-04-26T19:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019be0eb-d05a-a9f3-9989-0fa0b6b403a1",
+    "title": "Hacktech",
+    "url": "https://hack.caltech.edu",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Pasadena, California",
+    "coordinates": null,
+    "startDate": "2026-04-24T20:00:00+00:00",
+    "finalSubmissionDate": "2026-04-26T19:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c0f74-c95e-c774-8714-85018b12d414",
+    "title": "HackUPC",
+    "url": "https://hackupc.com",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Barcelona, Catalonia",
+    "coordinates": null,
+    "startDate": "2026-04-24T20:00:00+00:00",
+    "finalSubmissionDate": "2026-04-26T19:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c9b97-fed5-7148-03ea-4b58e06a0449",
+    "title": "BearHacks 2026",
+    "url": "https://www.bearhacks.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Mississauga, Ontario",
+    "coordinates": null,
+    "startDate": "2026-04-24T21:00:00+00:00",
+    "finalSubmissionDate": "2026-04-26T19:00:00+00:00",
+    "daysToFinal": 2,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c715e-f7dc-3084-aa53-d3595c4ac0a5",
+    "title": "KeanUHackThis",
+    "url": "https://www.keanuhackthis.com/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Union, 1075 Morris Ave, Union, NJ 07083",
+    "coordinates": null,
+    "startDate": "2026-04-25T13:00:00+00:00",
+    "finalSubmissionDate": "2026-04-26T14:00:00+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019cbf0c-afa1-c29a-7aeb-3d6b32caf9c9",
+    "title": "HackDavis 2026 Hackathon",
+    "url": "https://hackdavis.io/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Davis, California",
+    "coordinates": null,
+    "startDate": "2026-05-08T01:11:11+00:00",
+    "finalSubmissionDate": "2026-05-09T23:59:59+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c6b2f-e735-d114-2328-fef1b1d131f1",
+    "title": "Global Hack Week: GenAI",
+    "url": "https://organize.mlh.io/events/13816-global-hack-week-genai",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Everywhere, Worldwide",
+    "coordinates": null,
+    "startDate": "2026-05-08T16:00:00+00:00",
+    "finalSubmissionDate": "2026-05-14T17:00:00+00:00",
+    "daysToFinal": 6,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  },
+  {
+    "id": "mlh-019c2ada-db7c-5c90-932d-cffd4d5b2322",
+    "title": "HackHCC",
+    "url": "https://hackhcc.org/",
+    "sourcePlatform": "MLH",
+    "format": "Offline",
+    "locationText": "Houston, TX",
+    "coordinates": null,
+    "startDate": "2026-05-22T01:11:11+00:00",
+    "finalSubmissionDate": "2026-05-23T23:59:59+00:00",
+    "daysToFinal": 1,
+    "themes": [],
+    "organizerPastEvents": 0,
+    "prizes": [
+      "Unspecified"
+    ],
+    "createdAt": "2026-03-06T09:46:26.358965+00:00"
+  }
+]
